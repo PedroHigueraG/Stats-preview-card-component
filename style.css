@@ -1,0 +1,127 @@
+/* Variables */
+:root{
+    /* Primary */
+    --dark-blue: hsl(233, 47%, 7%);
+    --des-blue: hsl(244, 38%, 16%);
+    --soft-violet: hsl(277, 64%, 61%);
+    /* Neutral */
+    --white: hsl(0, 0%, 100%);
+    --main-white: hsla(0, 0%, 100%, 0.75);
+    --stat-white: hsla(0, 0%, 100%, 0.6);
+}
+/* Styles */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+    font-family: 'Inter', sans-serif;
+}
+body{
+    font-size: 1.5rem;
+}
+main{
+    background-color: var(--dark-blue);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+p{
+    color: var(--main-white);
+}
+h2{
+    margin-bottom: 0.8rem;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    text-align: center;
+    background-color: var(--des-blue);
+    border-radius: 1rem;
+    margin: 2rem;
+}
+.card-image{
+    background-image: url(images/image-header-mobile.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    border-radius: 1rem 1rem 0 0;
+    position: relative;
+}
+.card-image::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: hsla(277, 64%, 61%, 0.5);
+    border-radius: 1rem 1rem 0 0;
+}
+.text-container, .title, .p-card, .stats{
+    padding: 1.5rem;
+}
+.p-card{
+    line-height: 2.5rem;
+}
+.title, .stat-title{
+    color: var(--white);
+}
+.title span{
+    color: var(--soft-violet);
+}
+.stats p{
+    color: var(--stat-white);
+}
+.credits{
+    text-align: center;
+    margin: 2rem    ;
+}
+.credits a{
+    color: var(--soft-violet);
+}
+/* Media queries */
+@media screen and (max-width: 767px) {
+    .card-image{
+        height: 30rem;
+    }
+}
+@media screen and (min-width: 655px) {
+    .card-image{
+        background-image: url(images/image-header-desktop.jpg);
+    }
+}
+@media screen and (min-width:768px) {
+    .card{
+        flex-direction: row-reverse;
+        text-align: left;
+    }
+    .card-image{
+        border-radius: 0 1rem 1rem 0;
+    }
+    .card-image::before{
+        border-radius: 0 1rem 1rem 0;
+    }
+    .stats{
+        display: inline-block;
+    }
+    .text-container{
+        margin: 5rem;
+    }
+}
+@media screen and (min-width: 1024px) {
+    .stats{
+        margin-right: 2rem;
+    }
+}
+@media screen and (min-width: 1440px) {
+    .stats{
+        margin-right: 3rem;
+    }
+}
